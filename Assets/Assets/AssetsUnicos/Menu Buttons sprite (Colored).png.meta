@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: ce5e9482bcad3454991ce4fa3874ebe7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 601
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76eee54c99053d499232a6655ebc395
+      internalID: 440527354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 625
+        width: 601
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ce5e8d2ca4ea341aa3dae24651a06a
+      internalID: -1407858540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 833
+        width: 601
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7707394f1691ceb409ef53287d52e40a
+      internalID: -1252749283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 601
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc891cfec4f1644c831b2c595ed3209
+      internalID: -1858710029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 625
+        width: 602
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cace2d35482eae46b3bc0169d445c8e
+      internalID: -1356599574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_5
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 416
+        width: 602
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daaf2aa0d83f3984ca844583183ce456
+      internalID: 1218108409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 225
+        width: 1671
+        height: 809
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068b0e05990b0924e9f3215d78a93b49
+      internalID: 330910200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_7
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 208
+        width: 602
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a68bdd1ced3c374e8cf6fbc7df087a4
+      internalID: 320980741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_8
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 416
+        width: 603
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed993d53ac8eeb548b5b1f140c07fd82
+      internalID: -939589228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_9
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 208
+        width: 603
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb1c359c5234834a84138aeea0041e3
+      internalID: 570884674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_10
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 625
+        width: 603
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c67d4d451f931940a1864b1eb680131
+      internalID: 1056025677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_11
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 208
+        width: 203
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfed35aead471b0498e04d619861a129
+      internalID: 1847372289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_12
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 625
+        width: 203
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a56875046d287245ac3dabc0ad9d2e9
+      internalID: -85456616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_13
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 416
+        width: 203
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752054a0074c70e488423ab96588844e
+      internalID: -1562745539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_14
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 416
+        width: 202
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776803526c55271478d18ee2410ae148
+      internalID: -94197758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_15
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 625
+        width: 202
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c7450db3f873d4cb2d1c554383afd5
+      internalID: -2072513896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_16
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 208
+        width: 202
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e713b3f5fc4c63e4a8be0ddc72724177
+      internalID: 69285044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 601
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e78e6756a214de9448446e4d1837fd09
+      internalID: 68168953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu Buttons sprite (Colored)_18
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 1671
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ea2e87634f29b4cba8f50634ec0c56
+      internalID: 866197499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Menu Buttons sprite (Colored)_0: 440527354
+      Menu Buttons sprite (Colored)_1: -1407858540
+      Menu Buttons sprite (Colored)_10: 1056025677
+      Menu Buttons sprite (Colored)_11: 1847372289
+      Menu Buttons sprite (Colored)_12: -85456616
+      Menu Buttons sprite (Colored)_13: -1562745539
+      Menu Buttons sprite (Colored)_14: -94197758
+      Menu Buttons sprite (Colored)_15: -2072513896
+      Menu Buttons sprite (Colored)_16: 69285044
+      Menu Buttons sprite (Colored)_17: 68168953
+      Menu Buttons sprite (Colored)_18: 866197499
+      Menu Buttons sprite (Colored)_2: -1252749283
+      Menu Buttons sprite (Colored)_3: -1858710029
+      Menu Buttons sprite (Colored)_4: -1356599574
+      Menu Buttons sprite (Colored)_5: 1218108409
+      Menu Buttons sprite (Colored)_6: 330910200
+      Menu Buttons sprite (Colored)_7: 320980741
+      Menu Buttons sprite (Colored)_8: -939589228
+      Menu Buttons sprite (Colored)_9: 570884674
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
