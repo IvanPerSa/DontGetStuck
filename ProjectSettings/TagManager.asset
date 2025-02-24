@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Atras del todo
+    uniqueID: 2876028747
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Avance
+    uniqueID: 901854895
+    locked: 0
+  - name: Personaje Layer
+    uniqueID: 3664829535
+    locked: 0
+  - name: Delante del todo
+    uniqueID: 2208183383
     locked: 0
