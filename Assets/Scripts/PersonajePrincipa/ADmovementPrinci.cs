@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float wallJumpForceX = 5f; // Fuerza lateral del wall jump
     public float wallSlideSpeed = 2f; // Velocidad al deslizar en la pared
 
-    public Transform wallCheck; // Punto para detectar si toca una pared
+    [SerializeField] private Transform wallCheck; // Punto para detectar si toca una pared
     public float wallCheckRadius = 0.2f; // Radio de detección de pared
     public LayerMask whatIsWall; // Para detectar paredes
 
@@ -25,12 +25,29 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         jumpsLeft = maxJumps; // Empieza con todos los saltos disponibles
+
+        // Asignar wallCheck automáticamente si no está asignado en el Inspector
+        if (wallCheck == null)
+        {
+            wallCheck = transform.Find("WallCheck");
+
+            if (wallCheck == null)
+            {
+                Debug.LogError("No se encontró un objeto llamado 'WallCheck' como hijo del jugador. Asegúrate de crearlo en la jerarquía o asignarlo en el Inspector.");
+            }
+        }
     }
 
     void Update()
     {
-        // Movimiento horizontal
         moveInput = Input.GetAxisRaw("Horizontal"); // A (-1) / D (1)
+
+        // Verificar si wallCheck está asignado antes de usarlo
+        if (wallCheck == null)
+        {
+            Debug.LogError("wallCheck no ha sido asignado en el Inspector o no se encontró en la jerarquía.");
+            return;
+        }
 
         // Salto normal (Espacio o W)
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && (jumpsLeft > 0 || canWallJump))
@@ -63,7 +80,6 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        // Si está haciendo un wall jump, empuja hacia la dirección opuesta
         if (canWallJump && isWallSliding)
         {
             rb.velocity = new Vector2(-moveInput * wallJumpForceX, jumpForce);
@@ -79,7 +95,6 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verificar si el objeto tocado es hijo de ControladorColisiones
         if (collision.transform.root.gameObject.name == "ControladorColisiones")
         {
             isGrounded = true;
@@ -89,7 +104,6 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        // Detecta cuando deja de tocar el grupo de colisiones
         if (collision.transform.root.gameObject.name == "ControladorColisiones")
         {
             isGrounded = false;
