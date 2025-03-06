@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsWall; // Para detectar paredes
 
     private Rigidbody2D rb;
+    private Animator anim;
     private int jumpsLeft; // Saltos restantes normales
     private bool isGrounded; // Si está tocando el suelo
     private bool isTouchingWall; // Si está tocando una pared
@@ -21,9 +22,12 @@ public class PlayerController : MonoBehaviour
     private bool isWallSliding; // Si está deslizándose en una pared
     private bool canWallJump; // Si puede hacer wall jump
 
+    private bool isDoubleJumping = false; // Para saber si el jugador está realizando el doble salto
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>(); // Obtenemos el Animator
         jumpsLeft = maxJumps; // Empieza con todos los saltos disponibles
 
         // Asignar wallCheck automáticamente si no está asignado en el Inspector
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Salto normal (Espacio o W)
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && (jumpsLeft > 0 || canWallJump))
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && (isGrounded || !isDoubleJumping))
         {
             Jump();
         }
@@ -67,6 +71,9 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed); // Hace que se deslice en la pared
             canWallJump = true;
         }
+
+        // Actualizar las animaciones
+        UpdateAnimations();
     }
 
     void FixedUpdate()
@@ -84,12 +91,21 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(-moveInput * wallJumpForceX, jumpForce);
             canWallJump = false; // Evita saltos infinitos en la pared
+            isDoubleJumping = false; // Resetear el estado del doble salto
         }
         else
         {
-            rb.velocity = new Vector2(rb.velocity.x, 0); // Resetear velocidad en Y para evitar acumulaciones
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            jumpsLeft--;
+            if (isGrounded || !isDoubleJumping) // Si está tocando el suelo o no está en el doble salto
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0); // Resetear velocidad en Y para evitar acumulaciones
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                jumpsLeft--;
+
+                if (!isGrounded)
+                {
+                    isDoubleJumping = true; // Si no está tocando el suelo, es el doble salto
+                }
+            }
         }
     }
 
@@ -99,6 +115,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             jumpsLeft = maxJumps; // Resetea el doble salto
+            isDoubleJumping = false; // Resetear el estado del doble salto al tocar el suelo
         }
     }
 
@@ -109,4 +126,38 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    // Actualizar las animaciones y flip horizontal
+    void UpdateAnimations()
+    {
+        // Actualizar el parámetro Speed (horizontal)
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // Detecta si hay movimiento en X
+
+        // Actualizar el parámetro Jump (salto y caída)
+        if (!isGrounded && rb.velocity.y > 0.1f) // Está saltando
+        {
+            anim.SetFloat("Jump", 1); // Salto
+        }
+        else if (!isGrounded && rb.velocity.y < -0.1f) // Está cayendo
+        {
+            anim.SetFloat("Jump", -1); // Caída
+        }
+        else // En el suelo o en un estado normal
+        {
+            anim.SetFloat("Jump", 0); // Estado neutral (en el suelo)
+        }
+
+        // Flip en el eje X para girar el personaje según la dirección de movimiento
+        if (moveInput > 0)
+        {
+            // Mirar a la derecha (sin aplastar el sprite)
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
+        else if (moveInput < 0)
+        {
+            // Mirar a la izquierda (sin aplastar el sprite)
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        }
+    }
+
 }
