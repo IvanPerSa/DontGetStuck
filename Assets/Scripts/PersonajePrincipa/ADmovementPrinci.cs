@@ -151,12 +151,12 @@ public class PlayerController : MonoBehaviour
         if (moveInput > 0)
         {
             // Mirar a la derecha (sin aplastar el sprite)
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(1.626259f, transform.localScale.y, transform.localScale.z);
         }
         else if (moveInput < 0)
         {
             // Mirar a la izquierda (sin aplastar el sprite)
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+            transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
         }
     }
 
