@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private bool isWallSliding; // Si está deslizándose en una pared
     private bool canWallJump; // Si puede hacer wall jump
+    private ThrowableObject heldObject;
+    public Transform handPosition; // Punto donde sostiene el objeto
+
 
     private bool isDoubleJumping = false; // Para saber si el jugador está realizando el doble salto
 
@@ -158,6 +161,26 @@ public class PlayerController : MonoBehaviour
             // Mirar a la izquierda (sin aplastar el sprite)
             transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
         }
+
+
+        if (Input.GetKeyDown(KeyCode.E) && heldObject == null)
+        {
+            Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, 1f);
+            foreach (Collider2D obj in hitObjects)
+            {
+                ThrowableObject throwable = obj.GetComponent<ThrowableObject>();
+                if (throwable != null)
+                {
+                    throwable.PickUp(handPosition, this);
+                    heldObject = throwable;
+                    break;
+                }
+            }
+
+
+
+        }
+
     }
 
 }
