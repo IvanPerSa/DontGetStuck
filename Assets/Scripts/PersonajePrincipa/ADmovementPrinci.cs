@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform wallCheck; // Punto para detectar si toca una pared
     public float wallCheckRadius = 0.2f; // Radio de detección de pared
     public LayerMask whatIsWall; // Para detectar paredes
+    public LayerMask whatIsTecho; // Para detectar el techo
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -23,6 +24,9 @@ public class PlayerController : MonoBehaviour
     private bool canWallJump; // Si puede hacer wall jump
 
     private bool isDoubleJumping = false; // Para saber si el jugador está realizando el doble salto
+
+    private GameObject ControladorDeColisiones; // Objeto que contiene todos los suelos
+    private LayerMask whatIsSuelo; // Para detectar el suelo
 
     void Start()
     {
@@ -39,6 +43,14 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.LogError("No se encontró un objeto llamado 'WallCheck' como hijo del jugador. Asegúrate de crearlo en la jerarquía o asignarlo en el Inspector.");
             }
+        }
+
+        // Buscar el objeto ControladorDeColisiones en la jerarquía y asignar el suelo
+        ControladorDeColisiones = GameObject.Find("ControladorDeColisiones");
+
+        if (ControladorDeColisiones == null)
+        {
+            Debug.LogError("No se encontró un objeto llamado 'ControladorDeColisiones' en la jerarquía.");
         }
     }
 
@@ -59,7 +71,7 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        // Detectar si toca una pared
+        // Detectar si está tocando una pared
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
 
         // Activar wall slide si toca una pared y está cayendo
@@ -111,7 +123,8 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.root.gameObject.name == "ControladorColisiones")
+        // Verifica si el objeto tocado es un suelo hijo de "ControladorDeColisiones"
+        if (collision.transform.IsChildOf(ControladorDeColisiones.transform) && collision.gameObject.CompareTag("Suelo"))
         {
             isGrounded = true;
             jumpsLeft = maxJumps; // Resetea el doble salto
@@ -121,11 +134,13 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.transform.root.gameObject.name == "ControladorColisiones")
+        // Verifica si el jugador deja de tocar un suelo
+        if (collision.transform.IsChildOf(ControladorDeColisiones.transform) && collision.gameObject.CompareTag("Suelo"))
         {
             isGrounded = false;
         }
     }
+
 
     // Actualizar las animaciones y flip horizontal
     void UpdateAnimations()
@@ -159,5 +174,4 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
         }
     }
-
 }
