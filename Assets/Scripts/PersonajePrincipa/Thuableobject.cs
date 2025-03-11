@@ -36,7 +36,7 @@ public class ThrowableObject : MonoBehaviour
         isBeingHeld = true;
         player = playerTransform;
        // playerController = controller;
-        rb.isKinematic = true;  // Evita que la física lo mueva
+        rb.isKinematic = true;  // Evita que la fï¿½sica lo mueva
         col.enabled = false; // Evita colisiones mientras es sostenido
     }
 
@@ -46,8 +46,8 @@ public class ThrowableObject : MonoBehaviour
         rb.isKinematic = false;
         col.enabled = true;
 
-        // Aplicar fuerza en la dirección en que mira el jugador
-        rb.velocity = new Vector2(player.localScale.x * throwForce, 5f);
+        // Aplicar fuerza en la direcciï¿½n en que mira el jugador
+        rb.linearVelocity = new Vector2(player.localScale.x * throwForce, 5f);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +55,7 @@ public class ThrowableObject : MonoBehaviour
         // Si choca con el suelo, puedes agregar efectos, sonidos o rebotes
         if (collision.gameObject.CompareTag("ground"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, -rb.velocity.y * 0.5f); // Rebote reducido
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -rb.linearVelocity.y * 0.5f); // Rebote reducido
         }
     }
 }

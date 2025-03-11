@@ -5,27 +5,24 @@ public class PlayerController : MonoBehaviour
     public float speed = 5f; // Velocidad normal
     public float runMultiplier = 1.5f; // Multiplicador de velocidad al correr
     public float jumpForce = 10f; // Fuerza del salto
-    public int maxJumps = 2; // Saltos m·ximos normales
+    public int maxJumps = 2; // Saltos m√°ximos normales
     public float wallJumpForceX = 5f; // Fuerza lateral del wall jump
     public float wallSlideSpeed = 2f; // Velocidad al deslizar en la pared
 
     [SerializeField] private Transform wallCheck; // Punto para detectar si toca una pared
-    public float wallCheckRadius = 0.2f; // Radio de detecciÛn de pared
+    public float wallCheckRadius = 0.2f; // Radio de detecci√≥n de pared
     public LayerMask whatIsWall; // Para detectar paredes
 
     private Rigidbody2D rb;
     private Animator anim;
     private int jumpsLeft; // Saltos restantes normales
-    private bool isGrounded; // Si est· tocando el suelo
-    private bool isTouchingWall; // Si est· tocando una pared
+    private bool isGrounded; // Si est√° tocando el suelo
+    private bool isTouchingWall; // Si est√° tocando una pared
     private float moveInput;
-    private bool isWallSliding; // Si est· desliz·ndose en una pared
+    private bool isWallSliding; // Si est√° desliz√°ndose en una pared
     private bool canWallJump; // Si puede hacer wall jump
-    private ThrowableObject heldObject;
-    public Transform handPosition; // Punto donde sostiene el objeto
 
-
-    private bool isDoubleJumping = false; // Para saber si el jugador est· realizando el doble salto
+    private bool isDoubleJumping = false; // Para saber si el jugador est√° realizando el doble salto
 
     void Start()
     {
@@ -33,14 +30,14 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>(); // Obtenemos el Animator
         jumpsLeft = maxJumps; // Empieza con todos los saltos disponibles
 
-        // Asignar wallCheck autom·ticamente si no est· asignado en el Inspector
+        // Asignar wallCheck autom√°ticamente si no est√° asignado en el Inspector
         if (wallCheck == null)
         {
             wallCheck = transform.Find("WallCheck");
 
             if (wallCheck == null)
             {
-                Debug.LogError("No se encontrÛ un objeto llamado 'WallCheck' como hijo del jugador. Aseg˙rate de crearlo en la jerarquÌa o asignarlo en el Inspector.");
+                Debug.LogError("No se encontr√≥ un objeto llamado 'WallCheck' como hijo del jugador. Aseg√∫rate de crearlo en la jerarqu√≠a o asignarlo en el Inspector.");
             }
         }
     }
@@ -49,10 +46,10 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal"); // A (-1) / D (1)
 
-        // Verificar si wallCheck est· asignado antes de usarlo
+        // Verificar si wallCheck est√° asignado antes de usarlo
         if (wallCheck == null)
         {
-            Debug.LogError("wallCheck no ha sido asignado en el Inspector o no se encontrÛ en la jerarquÌa.");
+            Debug.LogError("wallCheck no ha sido asignado en el Inspector o no se encontr√≥ en la jerarqu√≠a.");
             return;
         }
 
@@ -65,13 +62,13 @@ public class PlayerController : MonoBehaviour
         // Detectar si toca una pared
         isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
 
-        // Activar wall slide si toca una pared y est· cayendo
-        isWallSliding = isTouchingWall && !isGrounded && rb.velocity.y < 0;
+        // Activar wall slide si toca una pared y est√° cayendo
+        isWallSliding = isTouchingWall && !isGrounded && rb.linearVelocity.y < 0;
 
-        // Si est· en la pared, permite un wall jump sin resetear el doble salto
+        // Si est√° en la pared, permite un wall jump sin resetear el doble salto
         if (isWallSliding)
         {
-            rb.velocity = new Vector2(rb.velocity.x, -wallSlideSpeed); // Hace que se deslice en la pared
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallSlideSpeed); // Hace que se deslice en la pared
             canWallJump = true;
         }
 
@@ -85,28 +82,28 @@ public class PlayerController : MonoBehaviour
         float currentSpeed = speed * (Input.GetKey(KeyCode.LeftShift) ? runMultiplier : 1f);
 
         // Aplicar movimiento
-        rb.velocity = new Vector2(moveInput * currentSpeed, rb.velocity.y);
+        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
     }
 
     void Jump()
     {
         if (canWallJump && isWallSliding)
         {
-            rb.velocity = new Vector2(-moveInput * wallJumpForceX, jumpForce);
+            rb.linearVelocity = new Vector2(-moveInput * wallJumpForceX, jumpForce);
             canWallJump = false; // Evita saltos infinitos en la pared
             isDoubleJumping = false; // Resetear el estado del doble salto
         }
         else
         {
-            if (isGrounded || !isDoubleJumping) // Si est· tocando el suelo o no est· en el doble salto
+            if (isGrounded || !isDoubleJumping) // Si est√° tocando el suelo o no est√° en el doble salto
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0); // Resetear velocidad en Y para evitar acumulaciones
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Resetear velocidad en Y para evitar acumulaciones
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 jumpsLeft--;
 
                 if (!isGrounded)
                 {
-                    isDoubleJumping = true; // Si no est· tocando el suelo, es el doble salto
+                    isDoubleJumping = true; // Si no est√° tocando el suelo, es el doble salto
                 }
             }
         }
@@ -133,24 +130,24 @@ public class PlayerController : MonoBehaviour
     // Actualizar las animaciones y flip horizontal
     void UpdateAnimations()
     {
-        // Actualizar el par·metro Speed (horizontal)
-        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x)); // Detecta si hay movimiento en X
+        // Actualizar el par√°metro Speed (horizontal)
+        anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x)); // Detecta si hay movimiento en X
 
-        // Actualizar el par·metro Jump (salto y caÌda)
-        if (!isGrounded && rb.velocity.y > 0.1f) // Est· saltando
+        // Actualizar el par√°metro Jump (salto y ca√≠da)
+        if (!isGrounded && rb.linearVelocity.y > 0.1f) // Est√° saltando
         {
             anim.SetFloat("Jump", 1); // Salto
         }
-        else if (!isGrounded && rb.velocity.y < -0.1f) // Est· cayendo
+        else if (!isGrounded && rb.linearVelocity.y < -0.1f) // Est√° cayendo
         {
-            anim.SetFloat("Jump", -1); // CaÌda
+            anim.SetFloat("Jump", -1); // Ca√≠da
         }
         else // En el suelo o en un estado normal
         {
             anim.SetFloat("Jump", 0); // Estado neutral (en el suelo)
         }
 
-        // Flip en el eje X para girar el personaje seg˙n la direcciÛn de movimiento
+        // Flip en el eje X para girar el personaje seg√∫n la direcci√≥n de movimiento
         if (moveInput > 0)
         {
             // Mirar a la derecha (sin aplastar el sprite)
@@ -161,26 +158,6 @@ public class PlayerController : MonoBehaviour
             // Mirar a la izquierda (sin aplastar el sprite)
             transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
         }
-
-
-        if (Input.GetKeyDown(KeyCode.E) && heldObject == null)
-        {
-            Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, 1f);
-            foreach (Collider2D obj in hitObjects)
-            {
-                ThrowableObject throwable = obj.GetComponent<ThrowableObject>();
-                if (throwable != null)
-                {
-                    throwable.PickUp(handPosition, this);
-                    heldObject = throwable;
-                    break;
-                }
-            }
-
-
-
-        }
-
     }
 
 }
