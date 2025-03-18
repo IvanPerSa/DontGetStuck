@@ -10,6 +10,7 @@ TagManager:
   - Suelos
   - Paredes
   - Techo
+  - Jugador
   layers:
   - Default
   - TransparentFX
