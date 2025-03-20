@@ -2,12 +2,6 @@ using UnityEngine;
 
 public class MovimientoPersonaje : MonoBehaviour
 {
-    // Referencias a los objetos con los BoxColliders
-    public GameObject suelos;   // Objeto que contiene los colliders de los suelos
-    public GameObject paredes;  // Objeto que contiene los colliders de las paredes
-    public GameObject techo;    // Objeto que contiene los colliders del techo
-
-    // Variables de movimiento
     public float velocidadNormal = 5f;
     public float velocidadCorrer = 7f;
     public float fuerzaSalto = 7f;
@@ -15,140 +9,95 @@ public class MovimientoPersonaje : MonoBehaviour
     public float velocidadDeslizamientoPared = 2f;
 
     private Rigidbody2D rb;
-    private bool enSuelo;
-    private bool enTecho;
+    private bool enSuelo, enPared;
     private bool puedeSaltar = true;
-    private bool enPared;
-    private bool corriendo;
+    private bool isDoubleJumping = false;
 
-    private bool isDoubleJumping = false; // Para saber si el jugador está realizando el doble salto
-
-    private Animator anim; // Componente Animator
-
-    // Para el flip del personaje
+    private Animator anim;
     private float moveInput;
+
+    public Transform comprobadorSuelo, comprobadorPared;
+    public LayerMask sueloLayer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); // Asegúrate de tener un componente Animator
+        anim = GetComponent<Animator>();
+
+        if (comprobadorSuelo == null || comprobadorPared == null)
+        {
+            Debug.LogError("?? ERROR: No se han asignado comprobadorSuelo o comprobadorPared en el Inspector.");
+        }
     }
 
     void Update()
     {
-        // Detecta el movimiento horizontal
         moveInput = Input.GetAxisRaw("Horizontal");
-
+        DetectarColisiones();
         Movimiento();
         Saltar();
-        DetectarColisiones();
         Animaciones();
     }
 
     void Movimiento()
     {
-        // Detecta si el jugador está presionando Shift para correr
-        corriendo = Input.GetKey(KeyCode.LeftShift);
-
-        // Determina la velocidad dependiendo de si está corriendo o no
-        float velocidad = corriendo ? velocidadCorrer : velocidadNormal;
-
-        // Movimiento horizontal
+        float velocidad = Input.GetKey(KeyCode.LeftShift) ? velocidadCorrer : velocidadNormal;
         rb.linearVelocity = new Vector2(moveInput * velocidad, rb.linearVelocity.y);
+
+        if (moveInput > 0) transform.localScale = new Vector3(1.626259f, transform.localScale.y, transform.localScale.z);
+        else if (moveInput < 0) transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
     }
 
     void Saltar()
     {
-        // Si el personaje está tocando el suelo, puede realizar un salto
         if (enSuelo)
         {
-            puedeSaltar = true;  // Resetear el doble salto al tocar el suelo
-            isDoubleJumping = false; // Resetear el estado de doble salto
+            puedeSaltar = true;
+            isDoubleJumping = false; // ? Se resetea correctamente al tocar el suelo
         }
 
-        // Si está en el suelo, permite el primer salto
-        if (enSuelo && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
-            puedeSaltar = false;
+            if (enSuelo)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
+                puedeSaltar = false;
+                Debug.Log("?? Salto normal!");
+            }
+            else if (!enSuelo && !isDoubleJumping)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaDobleSalto);
+                isDoubleJumping = true; // ? Solo se activa despu�s del primer salto
+                Debug.Log("?? DOBLE SALTO!");
+            }
+            else if (enPared)
+            {
+                float direccionSalto = transform.localScale.x > 0 ? -1 : 1;
+                rb.linearVelocity = new Vector2(direccionSalto * velocidadNormal, fuerzaDobleSalto);
+                puedeSaltar = false;
+                Debug.Log("????? Salto en pared!");
+            }
         }
-        // Si está en el aire y no ha realizado el doble salto, permite el doble salto
-        else if (!enSuelo && !isDoubleJumping && Input.GetButtonDown("Jump"))
+
+        // Deslizamiento en pared si est� toc�ndola y cayendo
+        if (enPared && !enSuelo && rb.linearVelocity.y < 0)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaDobleSalto);
-            isDoubleJumping = true; // Marcar que se ha hecho el doble salto
-        }
-        // Si está en la pared y presiona salto, realiza un wall jump
-        else if (enPared && Input.GetButtonDown("Jump") && puedeSaltar)
-        {
-            rb.linearVelocity = new Vector2(-Mathf.Sign(transform.localScale.x) * velocidadDeslizamientoPared, fuerzaDobleSalto);
-            puedeSaltar = false;  // Restringir el doble salto hasta estar de nuevo en el suelo
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -velocidadDeslizamientoPared);
         }
     }
 
     void DetectarColisiones()
     {
-        // Detecta si el personaje está tocando el suelo
-        enSuelo = DetectarColision(suelos);
+        enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, 0.2f, sueloLayer);
+        enPared = Physics2D.OverlapCircle(comprobadorPared.position, 0.2f, sueloLayer);
 
-        // Detecta si el personaje está tocando el techo
-        enTecho = DetectarColision(techo);
-
-        // Detecta si el personaje está tocando una pared
-        enPared = DetectarColision(paredes);
+        Debug.Log($"?? enSuelo: {enSuelo}, ?? enPared: {enPared}, ?? Doble Salto Usado: {isDoubleJumping}");
     }
 
-    bool DetectarColision(GameObject objeto)
-    {
-        // Comprobamos si el personaje está tocando el objeto que contiene los BoxColliders
-        BoxCollider2D[] colliders = objeto.GetComponentsInChildren<BoxCollider2D>();
-        foreach (BoxCollider2D collider in colliders)
-        {
-            if (collider.IsTouching(GetComponent<Collider2D>()))
-            {
-                return true;  // Si está tocando cualquier collider, devolvemos true
-            }
-        }
-        return false;  // Si no está tocando ninguno, devolvemos false
-    }
-
-    // Actualizar las animaciones
     void Animaciones()
     {
-        // Animación de movimiento (Speed: detecta si se está moviendo en el eje X)
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-
-        // Aquí detectamos si el jugador está moviéndose o no
-        bool corriendo = Mathf.Abs(rb.linearVelocity.x) > 0.1f;  // Si se mueve horizontalmente
-
-        // Cambiar la animación de "Idle" a "Run"
-        anim.SetBool("Corriendo", corriendo);
-
-        // Animación de salto (Jump: detecta si se está saltando o cayendo)
-        if (!enSuelo && rb.linearVelocity.y > 0.1f) // Está saltando
-        {
-            anim.SetFloat("Jump", 1); // Salto
-        }
-        else if (!enSuelo && rb.linearVelocity.y < -0.1f) // Está cayendo
-        {
-            anim.SetFloat("Jump", -1); // Caída
-        }
-        else // En el suelo o en un estado neutral
-        {
-            anim.SetFloat("Jump", 0); // Estado neutral (en el suelo)
-        }
-
-        // Flip en el eje X para girar el personaje según la dirección de movimiento
-        if (moveInput > 0)
-        {
-            // Mirar a la derecha (sin aplastar el sprite)
-            transform.localScale = new Vector3(1.626259f, transform.localScale.y, transform.localScale.z);
-        }
-        else if (moveInput < 0)
-        {
-            // Mirar a la izquierda (sin aplastar el sprite)
-            transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
-        }
+        anim.SetBool("Corriendo", Mathf.Abs(rb.linearVelocity.x) > 0.1f);
+        anim.SetFloat("Jump", rb.linearVelocity.y > 0.1f ? 1 : (rb.linearVelocity.y < -0.1f ? -1 : 0));
     }
-
 }
