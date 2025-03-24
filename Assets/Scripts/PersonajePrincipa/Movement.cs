@@ -4,100 +4,168 @@ public class MovimientoPersonaje : MonoBehaviour
 {
     public float velocidadNormal = 5f;
     public float velocidadCorrer = 7f;
-    public float fuerzaSalto = 7f;
-    public float fuerzaDobleSalto = 5f;
+    public float fuerzaSalto = 12f;
+    public float fuerzaDobleSalto = 6f;
     public float velocidadDeslizamientoPared = 2f;
 
     private Rigidbody2D rb;
-    private bool enSuelo, enPared;
+    private bool enSuelo;
+    private bool enPared;
     private bool puedeSaltar = true;
-    private bool isDoubleJumping = false;
+    private bool haDadoDobleSalto = false;
+
+    public Transform comprobadorSuelo;
+    public LayerMask capaSuelo;
+    private float radioComprobacion = 0.2f;
 
     private Animator anim;
     private float moveInput;
+   public bool puedeDobleSalto = false;
+    public float initJumpTimer;
+    float jumpTimer = 1.2f;
+    bool startTimer = false;
 
-    public Transform comprobadorSuelo, comprobadorPared;
-    public LayerMask sueloLayer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
-        if (comprobadorSuelo == null || comprobadorPared == null)
-        {
-            Debug.LogError("?? ERROR: No se han asignado comprobadorSuelo o comprobadorPared en el Inspector.");
-        }
+        jumpTimer = initJumpTimer;
     }
 
     void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-        DetectarColisiones();
-        Movimiento();
-        Saltar();
-        Animaciones();
+        if (enSuelo == true)
+        {
+            puedeDobleSalto = false;
+            // DetectarColisiones();
+            Movimiento();
+            Saltar();
+            Animaciones();
+        }
+        else
+        {
+            if (startTimer == true)
+            {
+                puedeDobleSalto = true;
+                jumpTimer -= Time.deltaTime;
+                
+                if(haDadoDobleSalto == true)
+                    anim.SetBool("IsDoubleJumping", false);
+                DobleSalto();
+                if (jumpTimer < 0)
+                {
+                    startTimer = false;
+                    puedeDobleSalto = false;
+                    haDadoDobleSalto=false;
+                    jumpTimer= initJumpTimer;
+                }
+            }
+        }
+       
     }
 
     void Movimiento()
     {
         float velocidad = Input.GetKey(KeyCode.LeftShift) ? velocidadCorrer : velocidadNormal;
         rb.linearVelocity = new Vector2(moveInput * velocidad, rb.linearVelocity.y);
-
-        if (moveInput > 0) transform.localScale = new Vector3(1.626259f, transform.localScale.y, transform.localScale.z);
-        else if (moveInput < 0) transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
     }
 
     void Saltar()
     {
-        if (enSuelo)
+       /* if (enSuelo) // Si está en el suelo, puede saltar de nuevo y hacer doble salto
         {
             puedeSaltar = true;
-            isDoubleJumping = false; // ? Se resetea correctamente al tocar el suelo
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (enSuelo)
+            haDadoDobleSalto = false;
+        }*/
+       
+            if ( Input.GetButtonDown("Jump"))
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
-                puedeSaltar = false;
-                Debug.Log("?? Salto normal!");
+                startTimer = true;
+                anim.SetBool("Jumping", true);
+                //puedeDobleSalto = true;
             }
-            else if (!enSuelo && !isDoubleJumping)
+            else
+            {
+            anim.SetBool("Jumping", false);
+            }
+           
+        
+    }
+    void DobleSalto()
+    {
+        if (puedeDobleSalto && Input.GetButtonDown("Jump"))
+        {
+            if (!haDadoDobleSalto)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaDobleSalto);
-                isDoubleJumping = true; // ? Solo se activa despu�s del primer salto
-                Debug.Log("?? DOBLE SALTO!");
+                haDadoDobleSalto = true;
+                anim.SetBool("IsDoubleJumping", true);
             }
-            else if (enPared)
-            {
-                float direccionSalto = transform.localScale.x > 0 ? -1 : 1;
-                rb.linearVelocity = new Vector2(direccionSalto * velocidadNormal, fuerzaDobleSalto);
-                puedeSaltar = false;
-                Debug.Log("????? Salto en pared!");
-            }
-        }
-
-        // Deslizamiento en pared si est� toc�ndola y cayendo
-        if (enPared && !enSuelo && rb.linearVelocity.y < 0)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, -velocidadDeslizamientoPared);
+           
+            
+              
+           
+           // puedeDobleSalto = false;
         }
     }
 
-    void DetectarColisiones()
+   /* void DetectarColisiones()
     {
-        enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, 0.2f, sueloLayer);
-        enPared = Physics2D.OverlapCircle(comprobadorPared.position, 0.2f, sueloLayer);
-
-        Debug.Log($"?? enSuelo: {enSuelo}, ?? enPared: {enPared}, ?? Doble Salto Usado: {isDoubleJumping}");
-    }
+        enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, radioComprobacion, capaSuelo);
+    }*/
 
     void Animaciones()
     {
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-        anim.SetBool("Corriendo", Mathf.Abs(rb.linearVelocity.x) > 0.1f);
-        anim.SetFloat("Jump", rb.linearVelocity.y > 0.1f ? 1 : (rb.linearVelocity.y < -0.1f ? -1 : 0));
+        anim.SetBool("EnSuelo", enSuelo);
+
+        /*if (!enSuelo && rb.linearVelocity.y > 0.1f)
+        {
+            anim.SetFloat("Jump", 1);
+        }*/
+        /*else if (!enSuelo && rb.linearVelocity.y < -0.1f)
+        {
+            anim.SetFloat("Jump", -1);
+        }
+        else
+        {
+            anim.SetFloat("Jump", 0);
+        }*/
+
+        if (moveInput > 0)
+        {
+            transform.localScale = new Vector3(1.626259f, transform.localScale.y, transform.localScale.z);
+        }
+        else if (moveInput < 0)
+        {
+            transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
+        }
     }
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Suelos")
+        {
+            Debug.Log("is landin");
+            enSuelo = true;
+        }
+        
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Suelos")
+        {
+            Debug.Log("no is landin");
+            enSuelo = false;
+        }
+    }*/
+
+   public bool setGround(bool ground)
+    {
+        return enSuelo = ground;
+    }
+
 }
+
