@@ -5,13 +5,10 @@ public class MovimientoPersonaje : MonoBehaviour
     public float velocidadNormal = 5f;
     public float velocidadCorrer = 7f;
     public float fuerzaSalto = 12f;
-    public float fuerzaDobleSalto = 6f;
-    public float velocidadDeslizamientoPared = 2f;
+    public float fuerzaDobleSalto = 10f;
 
     private Rigidbody2D rb;
     private bool enSuelo;
-    private bool enPared;
-    private bool puedeSaltar = true;
     private bool haDadoDobleSalto = false;
 
     public Transform comprobadorSuelo;
@@ -20,50 +17,36 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private Animator anim;
     private float moveInput;
-   public bool puedeDobleSalto = false;
-    public float initJumpTimer;
-    float jumpTimer = 1.2f;
-    bool startTimer = false;
-
+    public bool puedeDobleSalto = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        jumpTimer = initJumpTimer;
     }
 
     void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-        if (enSuelo == true)
+
+        // ✅ El personaje ahora puede moverse también en el aire
+        Movimiento();
+
+        // ✅ Detectar si está en el suelo
+        bool estabaEnSuelo = enSuelo;
+        enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, radioComprobacion, capaSuelo);
+
+        if (enSuelo && !estabaEnSuelo)
         {
-            puedeDobleSalto = false;
-            // DetectarColisiones();
-            Movimiento();
-            Saltar();
-            Animaciones();
+            haDadoDobleSalto = false; // ✅ Resetear el doble salto al tocar suelo
+            anim.SetBool("Jumping", false);
+            anim.SetBool("IsDoubleJumping", false);
         }
-        else
-        {
-            if (startTimer == true)
-            {
-                puedeDobleSalto = true;
-                jumpTimer -= Time.deltaTime;
-                
-                if(haDadoDobleSalto == true)
-                    anim.SetBool("IsDoubleJumping", false);
-                DobleSalto();
-                if (jumpTimer < 0)
-                {
-                    startTimer = false;
-                    puedeDobleSalto = false;
-                    haDadoDobleSalto=false;
-                    jumpTimer= initJumpTimer;
-                }
-            }
-        }
-       
+
+        Saltar();
+        DobleSalto(); // ✅ Ahora esto se ejecuta siempre en Update()
+
+        Animaciones();
     }
 
     void Movimiento()
@@ -74,66 +57,28 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Saltar()
     {
-       /* if (enSuelo) // Si está en el suelo, puede saltar de nuevo y hacer doble salto
+        if (enSuelo && Input.GetButtonDown("Jump"))
         {
-            puedeSaltar = true;
-            haDadoDobleSalto = false;
-        }*/
-       
-            if ( Input.GetButtonDown("Jump"))
-            {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
-                startTimer = true;
-                anim.SetBool("Jumping", true);
-                //puedeDobleSalto = true;
-            }
-            else
-            {
-            anim.SetBool("Jumping", false);
-            }
-           
-        
-    }
-    void DobleSalto()
-    {
-        if (puedeDobleSalto && Input.GetButtonDown("Jump"))
-        {
-            if (!haDadoDobleSalto)
-            {
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaDobleSalto);
-                haDadoDobleSalto = true;
-                anim.SetBool("IsDoubleJumping", true);
-            }
-           
-            
-              
-           
-           // puedeDobleSalto = false;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
+            anim.SetBool("Jumping", true);
         }
     }
 
-   /* void DetectarColisiones()
+    void DobleSalto()
     {
-        enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, radioComprobacion, capaSuelo);
-    }*/
+        // ✅ Ahora solo puede hacer doble salto si está en el aire y no lo ha usado aún
+        if (!enSuelo && !haDadoDobleSalto && Input.GetButtonDown("Jump"))
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaDobleSalto);
+            haDadoDobleSalto = true; // ✅ Evita saltos infinitos en el aire
+            anim.SetBool("IsDoubleJumping", true);
+        }
+    }
 
     void Animaciones()
     {
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
         anim.SetBool("EnSuelo", enSuelo);
-
-        /*if (!enSuelo && rb.linearVelocity.y > 0.1f)
-        {
-            anim.SetFloat("Jump", 1);
-        }*/
-        /*else if (!enSuelo && rb.linearVelocity.y < -0.1f)
-        {
-            anim.SetFloat("Jump", -1);
-        }
-        else
-        {
-            anim.SetFloat("Jump", 0);
-        }*/
 
         if (moveInput > 0)
         {
@@ -144,28 +89,13 @@ public class MovimientoPersonaje : MonoBehaviour
             transform.localScale = new Vector3(-1.626259f, transform.localScale.y, transform.localScale.z);
         }
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Suelos")
-        {
-            Debug.Log("is landin");
-            enSuelo = true;
-        }
-        
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Suelos")
-        {
-            Debug.Log("no is landin");
-            enSuelo = false;
-        }
-    }*/
 
-   public bool setGround(bool ground)
+    public void setGround(bool ground)
     {
-        return enSuelo = ground;
+        enSuelo = ground;
+        if (enSuelo)
+        {
+            haDadoDobleSalto = false; // ✅ Se reinicia el doble salto al tocar el suelo
+        }
     }
-
 }
-
