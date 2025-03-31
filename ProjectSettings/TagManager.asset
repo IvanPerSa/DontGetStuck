@@ -11,6 +11,7 @@ TagManager:
   - Paredes
   - Techo
   - Jugador
+  - Ending
   layers:
   - Default
   - TransparentFX
