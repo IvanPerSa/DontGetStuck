@@ -18,35 +18,57 @@ public class MovimientoPersonaje : MonoBehaviour
     private Animator anim;
     private float moveInput;
     public bool puedeDobleSalto = false;
-
+    bool alive = true;
+    public float initCounter;
+    float counter = 1.2f;
+    public Vector2 initPos;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        counter = initCounter;
     }
 
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
 
-        // ✅ El personaje ahora puede moverse también en el aire
-        Movimiento();
-
-        // ✅ Detectar si está en el suelo
-        bool estabaEnSuelo = enSuelo;
-        enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, radioComprobacion, capaSuelo);
-
-        if (enSuelo && !estabaEnSuelo)
+        if (alive)
         {
-            haDadoDobleSalto = false; // ✅ Resetear el doble salto al tocar suelo
-            anim.SetBool("Jumping", false);
-            anim.SetBool("IsDoubleJumping", false);
+            moveInput = Input.GetAxisRaw("Horizontal");
+
+            // ✅ El personaje ahora puede moverse también en el aire
+            Movimiento();
+
+            // ✅ Detectar si está en el suelo
+            bool estabaEnSuelo = enSuelo;
+            enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, radioComprobacion, capaSuelo);
+
+            if (enSuelo && !estabaEnSuelo)
+            {
+                haDadoDobleSalto = false; // ✅ Resetear el doble salto al tocar suelo
+                anim.SetBool("Jumping", false);
+                anim.SetBool("IsDoubleJumping", false);
+            }
+
+            Saltar();
+            DobleSalto(); // ✅ Ahora esto se ejecuta siempre en Update()
+
+            Animaciones();
         }
 
-        Saltar();
-        DobleSalto(); // ✅ Ahora esto se ejecuta siempre en Update()
-
-        Animaciones();
+        else
+        {
+            counter -=Time.deltaTime;
+            if(counter < 0)
+            {
+                
+                this.gameObject.transform.position = initPos;
+                anim.SetBool("alive", true);
+                counter = initCounter;
+                alive = true;
+                
+            }
+        }
     }
 
     void Movimiento()
@@ -97,5 +119,9 @@ public class MovimientoPersonaje : MonoBehaviour
         {
             haDadoDobleSalto = false; // ✅ Se reinicia el doble salto al tocar el suelo
         }
+    }
+    public bool isAlive(bool state)
+    {
+        return alive = state;
     }
 }

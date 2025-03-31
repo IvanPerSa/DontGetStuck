@@ -342,6 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 184540960}
+  - component: {fileID: 184540961}
   m_Layer: 0
   m_Name: SpikeGroup (1)
   m_TagString: Pinchos
@@ -358,7 +359,7 @@ Transform:
   m_GameObject: {fileID: 184540959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.21, y: -23.8, z: -0.3114891}
+  m_LocalPosition: {x: 65.21, y: -23.93, z: -0.3114891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -371,6 +372,18 @@ Transform:
   - {fileID: 1121053532}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &184540961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184540959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202854099
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +429,7 @@ GameObject:
   - component: {fileID: 221301393}
   - component: {fileID: 221301395}
   - component: {fileID: 221301394}
+  - component: {fileID: 221301396}
   m_Layer: 0
   m_Name: Espikes
   m_TagString: Interactuable
@@ -539,6 +553,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &221301396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221301392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &251166366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1388,7 @@ GameObject:
   - component: {fileID: 410100436}
   - component: {fileID: 410100438}
   - component: {fileID: 410100437}
+  - component: {fileID: 410100439}
   m_Layer: 0
   m_Name: Espikes (9)
   m_TagString: Interactuable
@@ -1485,6 +1512,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &410100439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410100435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &471358604
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,6 +2102,7 @@ GameObject:
   - component: {fileID: 571386914}
   - component: {fileID: 571386916}
   - component: {fileID: 571386915}
+  - component: {fileID: 571386917}
   m_Layer: 0
   m_Name: Espikes (7)
   m_TagString: Interactuable
@@ -2186,6 +2226,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &571386917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571386913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &639012739
 GameObject:
   m_ObjectHideFlags: 0
@@ -17813,6 +17865,7 @@ GameObject:
   - component: {fileID: 653717060}
   - component: {fileID: 653717062}
   - component: {fileID: 653717061}
+  - component: {fileID: 653717063}
   m_Layer: 0
   m_Name: Espikes (6)
   m_TagString: Interactuable
@@ -17936,6 +17989,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &653717063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653717059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &666243791
 GameObject:
   m_ObjectHideFlags: 0
@@ -17947,6 +18012,7 @@ GameObject:
   - component: {fileID: 666243792}
   - component: {fileID: 666243794}
   - component: {fileID: 666243793}
+  - component: {fileID: 666243795}
   m_Layer: 0
   m_Name: Espikes (2)
   m_TagString: Interactuable
@@ -18070,6 +18136,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &666243795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666243791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &677639535
 GameObject:
   m_ObjectHideFlags: 0
@@ -18465,6 +18543,7 @@ GameObject:
   - component: {fileID: 832548443}
   - component: {fileID: 832548445}
   - component: {fileID: 832548444}
+  - component: {fileID: 832548446}
   m_Layer: 0
   m_Name: Espikes (1)
   m_TagString: Interactuable
@@ -18588,6 +18667,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &832548446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832548442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &855947124
 GameObject:
   m_ObjectHideFlags: 0
@@ -18599,6 +18690,7 @@ GameObject:
   - component: {fileID: 855947125}
   - component: {fileID: 855947127}
   - component: {fileID: 855947126}
+  - component: {fileID: 855947128}
   m_Layer: 0
   m_Name: Espikes (5)
   m_TagString: Interactuable
@@ -18722,6 +18814,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &855947128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855947124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910167964
 GameObject:
   m_ObjectHideFlags: 0
@@ -18867,6 +18971,7 @@ GameObject:
   - component: {fileID: 916678319}
   - component: {fileID: 916678321}
   - component: {fileID: 916678320}
+  - component: {fileID: 916678322}
   m_Layer: 0
   m_Name: Espikes (3)
   m_TagString: Interactuable
@@ -18990,6 +19095,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &916678322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916678318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1046384555
 GameObject:
   m_ObjectHideFlags: 0
@@ -19836,6 +19953,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1457998178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1457998179}
+  m_Layer: 0
+  m_Name: initpos
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1457998179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457998178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.558, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1505415121
 GameObject:
   m_ObjectHideFlags: 0
@@ -20365,6 +20513,7 @@ GameObject:
   - component: {fileID: 1629204745}
   - component: {fileID: 1629204747}
   - component: {fileID: 1629204746}
+  - component: {fileID: 1629204748}
   m_Layer: 0
   m_Name: Espikes (4)
   m_TagString: Interactuable
@@ -20488,6 +20637,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1629204748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629204744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1664151732
 GameObject:
   m_ObjectHideFlags: 0
@@ -20622,6 +20783,7 @@ GameObject:
   - component: {fileID: 1705334796}
   - component: {fileID: 1705334798}
   - component: {fileID: 1705334797}
+  - component: {fileID: 1705334799}
   m_Layer: 0
   m_Name: Espikes (2)
   m_TagString: Untagged
@@ -20745,6 +20907,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1705334799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705334795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735156233
 GameObject:
   m_ObjectHideFlags: 0
@@ -20756,6 +20930,7 @@ GameObject:
   - component: {fileID: 1735156234}
   - component: {fileID: 1735156236}
   - component: {fileID: 1735156235}
+  - component: {fileID: 1735156237}
   m_Layer: 0
   m_Name: Espikes (10)
   m_TagString: Interactuable
@@ -20879,6 +21054,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1735156237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735156233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759991105
 GameObject:
   m_ObjectHideFlags: 0
@@ -20890,6 +21077,7 @@ GameObject:
   - component: {fileID: 1759991106}
   - component: {fileID: 1759991108}
   - component: {fileID: 1759991107}
+  - component: {fileID: 1759991109}
   m_Layer: 0
   m_Name: Espikes (8)
   m_TagString: Interactuable
@@ -21013,6 +21201,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1759991109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759991105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47013cd7f4fc05149be83f08b03717d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1775664013
 GameObject:
   m_ObjectHideFlags: 0
@@ -22686,16 +22886,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3790973119069279200, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
+      propertyPath: initPos.x
+      value: -9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790973119069279200, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
+      propertyPath: initPos.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790973119069279200, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
+      propertyPath: initCounter
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790973119069279200, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
       propertyPath: comprobadorSuelo
       value: 
       objectReference: {fileID: 1801740503}
     - target: {fileID: 5654011210919051317, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.8
+      value: 63.1
       objectReference: {fileID: 0}
     - target: {fileID: 5654011210919051317, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: -16.3
       objectReference: {fileID: 0}
     - target: {fileID: 5654011210919051317, guid: 96ec0e9f6bb7f49408dc479bab6575fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22820,3 +23032,4 @@ SceneRoots:
   - {fileID: 1613036461}
   - {fileID: 471358606}
   - {fileID: 2119828599}
+  - {fileID: 1457998179}
