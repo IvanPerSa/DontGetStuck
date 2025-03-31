@@ -9,13 +9,14 @@ public class PauseGameOnEnding : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Comprobar si el objeto que colisionó tiene el nombre "ending"
-        if (other.gameObject.name == "ending")
+        if (other.gameObject.name == "Princi")
         {
-            // Pausar el juego
+
+            MenuEnding.SetActive(true);
+         
             Time.timeScale = 0f;
 
-            // Activar el MenuFinal
-            MenuEnding.SetActive(true);
+            
         }
     }
 }

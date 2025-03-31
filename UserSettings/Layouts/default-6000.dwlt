@@ -69,8 +69,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 933
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 631
+    y: 576
     width: 1465
     height: 355
   m_SerializedDataModeController:
@@ -345,21 +345,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 60}
     m_SelectedIDs: 628e0000
     m_LastClickedID: 36450
-    m_ExpandedIDs: 00000000c28d0000f08d0000f68d000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000001c8e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scenes
-      m_OriginalName: Scenes
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 36340
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 5}
@@ -374,7 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c28d0000
+    m_ExpandedIDs: 000000001c8e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -453,8 +453,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1466
-    y: 79
+    x: 1467
+    y: 24
     width: 453
     height: 907
   m_SerializedDataModeController:
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 362
     height: 526
   m_SerializedDataModeController:
@@ -525,18 +525,18 @@ MonoBehaviour:
       m_ExpandedIDs: 7ab2ffff7eb2ffff80b2ffff04b4ffffa4b9ffff36c0ffffb6c6ffffc8c6ffff68c8ffff82c8ffff8ec8ffff9ac8ffffa2c8ffffc4c8ffff16e2ffffb4e5ffff88ebffff26ecffff36edffffecedffffb0eeffffc8faffff048b0000bc8b000048a100009aa1000052a2000034c7000088c70000aec7000046c80000d6d100000ad2000038e90000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: PanelEsc
-        m_OriginalName: PanelEsc
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 59826
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 4}
@@ -568,8 +568,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 363
-    y: 79
+    x: 364
+    y: 24
     width: 1101
     height: 526
   m_SerializedDataModeController:

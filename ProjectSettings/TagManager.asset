@@ -12,6 +12,7 @@ TagManager:
   - Techo
   - Jugador
   - Ending
+  - Pinchos
   layers:
   - Default
   - TransparentFX
