@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 3516d46c2dab990468c3ba0c5b1c8bb4
+guid: 8fd93713fdad25d418278548a964468f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8027440805324533365
-    second: Desappearing4 (96x96)_0
-  - first:
-      213: -6075953189170643339
-    second: Desappearing4 (96x96)_1
-  - first:
-      213: -6714027985436490794
-    second: Desappearing4 (96x96)_2
-  - first:
-      213: -547748692916352624
-    second: Desappearing4 (96x96)_3
+      213: -2384869808163634355
+    second: Hover 3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Desappearing4 (96x96)_0
+      name: Hover 3_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 28
-        width: 23
-        height: 22
+        x: 0
+        y: 0
+        width: 88
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57e28d891e2376f60800000000000000
-      internalID: 8027440805324533365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Desappearing4 (96x96)_1
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 48
-        width: 18
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 57ef49724c0edaba0800000000000000
-      internalID: -6075953189170643339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Desappearing4 (96x96)_2
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d3c604ae1bf2d2a0800000000000000
-      internalID: -6714027985436490794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Desappearing4 (96x96)_3
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 32
-        width: 21
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 099498447710668f0800000000000000
-      internalID: -547748692916352624
+      spriteID: d434ad88b8d37eed0800000000000000
+      internalID: -2384869808163634355
       vertices: []
       indices: 
       edges: []
@@ -209,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Desappearing4 (96x96)_0: 8027440805324533365
-      Desappearing4 (96x96)_1: -6075953189170643339
-      Desappearing4 (96x96)_2: -6714027985436490794
-      Desappearing4 (96x96)_3: -547748692916352624
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

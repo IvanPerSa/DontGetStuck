@@ -100,7 +100,6 @@ public class MovimientoPersonaje : MonoBehaviour
     void Animaciones()
     {
         anim.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
-        anim.SetBool("EnSuelo", enSuelo);
 
         if (moveInput > 0)
         {

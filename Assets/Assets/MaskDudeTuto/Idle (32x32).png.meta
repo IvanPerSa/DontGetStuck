@@ -1,31 +1,40 @@
 fileFormatVersion: 2
-guid: 5d0973efdd4a7ed4baa1c5dbba2597e2
+guid: fed3855927641704189c58ad25302c21
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4334479477651161715
-    second: Desappearing6 (96x96)_0
+      213: -6367560908665664636
+    second: Idle (32x32)_0
   - first:
-      213: 132643409673341645
-    second: Desappearing6 (96x96)_1
+      213: -6056987297122131021
+    second: Idle (32x32)_1
   - first:
-      213: 8772415256458861112
-    second: Desappearing6 (96x96)_2
+      213: 8416797952724722639
+    second: Idle (32x32)_2
   - first:
-      213: -7462721378789943770
-    second: Desappearing6 (96x96)_3
+      213: 4883129791460916795
+    second: Idle (32x32)_3
   - first:
-      213: -6986202102699901072
-    second: Desappearing6 (96x96)_4
+      213: 4278371960119211202
+    second: Idle (32x32)_4
   - first:
-      213: 2974121923025155767
-    second: Desappearing6 (96x96)_5
+      213: 8644832591467991550
+    second: Idle (32x32)_5
   - first:
-      213: -4520811334312155266
-    second: Desappearing6 (96x96)_6
+      213: -7152759390613953277
+    second: Idle (32x32)_6
   - first:
-      213: -6946119219465087174
-    second: Desappearing6 (96x96)_7
+      213: 6456874251884481089
+    second: Idle (32x32)_7
+  - first:
+      213: -2526832996998184344
+    second: Idle (32x32)_8
+  - first:
+      213: 4392827059107796345
+    second: Idle (32x32)_9
+  - first:
+      213: -1363835404106015672
+    second: Idle (32x32)_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_0
+      name: Idle (32x32)_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 73
-        width: 12
-        height: 12
+        x: 5
+        y: 0
+        width: 26
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3724e9fae1a272c30800000000000000
-      internalID: 4334479477651161715
+      spriteID: 48bc1512711e1a7a0800000000000000
+      internalID: -6367560908665664636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_1
+      name: Idle (32x32)_1
       rect:
         serializedVersion: 2
-        x: 47
-        y: 83
-        width: 6
-        height: 7
+        x: 37
+        y: 0
+        width: 26
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dca40637a7e37d100800000000000000
-      internalID: 132643409673341645
+      spriteID: 3b36bf1052241fba0800000000000000
+      internalID: -6056987297122131021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_2
+      name: Idle (32x32)_2
       rect:
         serializedVersion: 2
-        x: 75
-        y: 73
-        width: 12
-        height: 12
+        x: 69
+        y: 0
+        width: 26
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83a927f8231edb970800000000000000
-      internalID: 8772415256458861112
+      spriteID: fc36466d4297ec470800000000000000
+      internalID: 8416797952724722639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_3
+      name: Idle (32x32)_3
       rect:
         serializedVersion: 2
-        x: 7
-        y: 45
-        width: 8
-        height: 6
+        x: 101
+        y: 0
+        width: 26
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6261387f1761f6890800000000000000
-      internalID: -7462721378789943770
+      spriteID: b3eb7246cac54c340800000000000000
+      internalID: 4883129791460916795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_4
+      name: Idle (32x32)_4
       rect:
         serializedVersion: 2
-        x: 85
-        y: 45
-        width: 17
-        height: 6
+        x: 133
+        y: 0
+        width: 26
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07f3c7bb3360c0f90800000000000000
-      internalID: -6986202102699901072
+      spriteID: 2c4b5e341a4df5b30800000000000000
+      internalID: 4278371960119211202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_5
+      name: Idle (32x32)_5
       rect:
         serializedVersion: 2
-        x: 13
-        y: 11
-        width: 12
-        height: 12
+        x: 165
+        y: 0
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b6bd94a124364920800000000000000
-      internalID: 2974121923025155767
+      spriteID: ef15b2d807d98f770800000000000000
+      internalID: 8644832591467991550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_6
+      name: Idle (32x32)_6
       rect:
         serializedVersion: 2
-        x: 47
-        y: 5
-        width: 6
-        height: 8
+        x: 197
+        y: 0
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e77a3c13b0ad241c0800000000000000
-      internalID: -4520811334312155266
+      spriteID: 305ad9e2b3b4cbc90800000000000000
+      internalID: -7152759390613953277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desappearing6 (96x96)_7
+      name: Idle (32x32)_7
       rect:
         serializedVersion: 2
-        x: 75
-        y: 11
-        width: 12
-        height: 12
+        x: 229
+        y: 0
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,8 +299,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a37154c3f5d6a9f90800000000000000
-      internalID: -6946119219465087174
+      spriteID: 14ac0fe0cec6b9950800000000000000
+      internalID: 6456874251884481089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8620037e6c2eeecd0800000000000000
+      internalID: -2526832996998184344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 0
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97518d1afe476fc30800000000000000
+      internalID: 4392827059107796345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle (32x32)_10
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 0
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84cd8260deea21de0800000000000000
+      internalID: -1363835404106015672
       vertices: []
       indices: 
       edges: []
@@ -310,14 +385,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Desappearing6 (96x96)_0: 4334479477651161715
-      Desappearing6 (96x96)_1: 132643409673341645
-      Desappearing6 (96x96)_2: 8772415256458861112
-      Desappearing6 (96x96)_3: -7462721378789943770
-      Desappearing6 (96x96)_4: -6986202102699901072
-      Desappearing6 (96x96)_5: 2974121923025155767
-      Desappearing6 (96x96)_6: -4520811334312155266
-      Desappearing6 (96x96)_7: -6946119219465087174
+      Idle (32x32)_0: -6367560908665664636
+      Idle (32x32)_1: -6056987297122131021
+      Idle (32x32)_10: -1363835404106015672
+      Idle (32x32)_2: 8416797952724722639
+      Idle (32x32)_3: 4883129791460916795
+      Idle (32x32)_4: 4278371960119211202
+      Idle (32x32)_5: 8644832591467991550
+      Idle (32x32)_6: -7152759390613953277
+      Idle (32x32)_7: 6456874251884481089
+      Idle (32x32)_8: -2526832996998184344
+      Idle (32x32)_9: 4392827059107796345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

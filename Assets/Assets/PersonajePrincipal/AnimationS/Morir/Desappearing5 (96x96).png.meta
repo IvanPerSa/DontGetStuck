@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Desappearing5 (96x96)_0: -9057241630879697826
+      Desappearing5 (96x96)_1: 6124586674318475106
+      Desappearing5 (96x96)_2: 8026317900100102458
+      Desappearing5 (96x96)_3: -2437311922936125964
+      Desappearing5 (96x96)_4: 4867428801348066251
+      Desappearing5 (96x96)_5: 7338221533520773779
+      Desappearing5 (96x96)_6: 9032827037096781361
+      Desappearing5 (96x96)_7: 4582254681193230271
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

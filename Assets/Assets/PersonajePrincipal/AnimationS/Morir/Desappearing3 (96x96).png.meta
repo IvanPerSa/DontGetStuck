@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Desappearing3 (96x96)_0: 5865460075711541307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
