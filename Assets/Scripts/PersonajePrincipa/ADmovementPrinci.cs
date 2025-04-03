@@ -123,23 +123,27 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Verifica si el objeto tocado es un suelo hijo de "ControladorDeColisiones"
-        if (collision.transform.IsChildOf(ControladorDeColisiones.transform) && collision.gameObject.CompareTag("Suelo"))
+        // Si el jugador aterriza en un suelo o en una plataforma
+        if ((collision.transform.IsChildOf(ControladorDeColisiones.transform) && collision.gameObject.CompareTag("Suelo")) ||
+            collision.gameObject.CompareTag("Plataforma"))
         {
             isGrounded = true;
-            jumpsLeft = maxJumps; // Resetea el doble salto
-            isDoubleJumping = false; // Resetear el estado del doble salto al tocar el suelo
+            jumpsLeft = maxJumps; // Resetea los saltos
+            isDoubleJumping = false; // Permite saltar de nuevo
+            canWallJump = false; // Evita hacer wall jump en el suelo
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        // Verifica si el jugador deja de tocar un suelo
-        if (collision.transform.IsChildOf(ControladorDeColisiones.transform) && collision.gameObject.CompareTag("Suelo"))
+        // Si el jugador deja de tocar un suelo o plataforma
+        if ((collision.transform.IsChildOf(ControladorDeColisiones.transform) && collision.gameObject.CompareTag("Suelo")) ||
+            collision.gameObject.CompareTag("Plataforma"))
         {
             isGrounded = false;
         }
     }
+
 
 
     // Actualizar las animaciones y flip horizontal
