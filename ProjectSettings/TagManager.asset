@@ -2,13 +2,23 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - PersonajePrincipal
+  - Interactuable
+  - ground
+  - Suelos
+  - Paredes
+  - Techo
+  - Jugador
+  - Ending
+  - Pinchos
+  - Plataforma
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - sueloLayer
   - Water
   - UI
   - 
@@ -53,3 +63,5 @@ TagManager:
   - name: Delante del todo
     uniqueID: 2208183383
     locked: 0
+  m_RenderingLayers:
+  - Default

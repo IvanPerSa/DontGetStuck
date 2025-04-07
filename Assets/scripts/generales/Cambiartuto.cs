@@ -6,8 +6,8 @@ public class CambiarTuto : MonoBehaviour
     // Método para cambiar la escena
     public void CambiarEscena()
     {
-        Debug.Log("Funciona");
-        SceneManager.LoadScene("EscenaTuto");
+        Debug.Log("Pruebas");
+        SceneManager.LoadScene("Pruebas");
        
     }
 }
