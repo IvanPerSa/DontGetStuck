@@ -12,12 +12,11 @@ public class DesaparecerPincho : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Verificar si el objeto que colisiona tiene el tag "Princi"
-        if (collision.gameObject.CompareTag("Ground_Detection") || collision.gameObject.CompareTag("PersonajePrincipal"))
+        if (collision.gameObject.CompareTag("PersonajePrincipal"))
         {
             princi.GetComponent<Animator>().SetBool("alive",false);
             princi.GetComponent<MovimientoPersonaje>().isAlive(false);
-            // Desactivar el GameObject del personaje (hacer desaparecer a Princi)
-            //collision.gameObject.SetActive(false);
+          
         }
     }
 }
