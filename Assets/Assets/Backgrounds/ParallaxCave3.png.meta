@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 46c004d1596cfb64486bed3edb56b5c0
+guid: 985fe87455149d24184289da532e5c00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8157529274441160004
-    second: Idle2_0
+      213: -6782770468422943474
+    second: ParallaxCave3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle2_0
+      name: ParallaxCave3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 7
-        height: 8
+        width: 1152
+        height: 1088
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbaa5186852aace80800000000000000
-      internalID: -8157529274441160004
+      spriteID: e0df3a41232ced1a0800000000000000
+      internalID: -6782770468422943474
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Idle2_0: -8157529274441160004
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
