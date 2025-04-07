@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1897
     height: 973
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 9}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 90
+  controlID: 100
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 18
+  controlID: 172
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19
+  controlID: 99
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/objetos
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -362,30 +362,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/objetos
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\i.pereiras\Desktop\DontGetStuck
+  m_LastProjectPath: C:\Users\b.perez\ProyectoFinal\DontGetStuck
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 30900000
-    m_LastClickedID: 36912
-    m_ExpandedIDs: 00000000309000009490000000ca9a3bffffff7f
+    m_SelectedIDs: 804b0000
+    m_LastClickedID: 19328
+    m_ExpandedIDs: 000000002a9000002c9000002e90000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Enemigos
-      m_OriginalName: Enemigos
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 39696
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 6}
@@ -400,7 +400,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000030900000
+    m_ExpandedIDs: 000000002a9000002c9000002e900000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,7 +503,7 @@ MonoBehaviour:
     - e00: 0.45869565
       e01: 0
       e02: 0
-      e03: 55.663086
+      e03: -3.8369446
       e10: 0
       e11: 0.45869565
       e12: 0
@@ -516,14 +516,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.5694737
+    - e00: 0.7473684
       e01: 0
       e02: 0
-      e03: -13.473541
+      e03: -22.368408
       e10: 0
-      e11: 0.5694737
+      e11: 0.7473684
       e12: 0
-      e13: 68.9
+      e13: 49.5
       e20: 0
       e21: 0
       e22: 1
@@ -532,14 +532,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.63894737
+    - e00: 0.33161137
       e01: 0
       e02: 0
-      e03: -16.947357
+      e03: 189.8512
       e10: 0
-      e11: 0.63894737
+      e11: 0.33161137
       e12: 0
-      e13: 37.436844
+      e13: 100.276726
       e20: 0
       e21: 0
       e22: 1
@@ -607,7 +607,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 742
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -652,20 +652,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c0baffff
-      m_LastClickedID: -17728
-      m_ExpandedIDs: e08affff00aeffff4eafffff68b6ffff60bbfffff6f3ffff66faffff428d000070920000a8a30000d6a4000026a50000
+      m_SelectedIDs: 58f4ffff
+      m_LastClickedID: -2984
+      m_ExpandedIDs: f8f4ffff3ef5ffff44f6ffff8af6ffffd0f9ffff2a940000709400008c9400007e950000ce9500004c960000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 3
-        m_OriginalName: 3
+        m_Name: Plataforma
+        m_OriginalName: Plataforma
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -21062
+        m_UserData: 38360
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1230,9 +1230,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 47.833305, y: -17.444893, z: 3.3035147}
+    m_Target: {x: 32.665222, y: -15.337477, z: -0.32013696}
     speed: 2
-    m_Value: {x: 47.833305, y: -17.444893, z: 3.3035147}
+    m_Value: {x: 32.665222, y: -15.337477, z: -0.32013696}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1282,9 +1282,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 19.10147
+    m_Target: 32.879715
     speed: 2
-    m_Value: 19.10147
+    m_Value: 32.879715
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1302,7 +1302,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.11970432, y: 0.072009735, z: -0.008704892, w: -0.99016243}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 17}
