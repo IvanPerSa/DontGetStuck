@@ -5,11 +5,9 @@ public class MovimientoPersonaje : MonoBehaviour
     public float velocidadNormal = 5f;
     public float velocidadCorrer = 7f;
     public float fuerzaSalto = 12f;
-    public float fuerzaDobleSalto = 10f;
 
     private Rigidbody2D rb;
     private bool enSuelo = false;
-    private bool haDadoDobleSalto = false;
     private bool alive = true;
 
     private Animator anim;
@@ -44,17 +42,9 @@ public class MovimientoPersonaje : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         Movimiento();
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && enSuelo)
         {
-            if (enSuelo)
-            {
-                Saltar();
-                haDadoDobleSalto = false;
-            }
-            else if (!haDadoDobleSalto)
-            {
-                DobleSalto();
-            }
+            Saltar();
         }
 
         Animaciones();
@@ -70,13 +60,6 @@ public class MovimientoPersonaje : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
         anim.SetBool("Jumping", true);
-    }
-
-    void DobleSalto()
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaDobleSalto);
-        haDadoDobleSalto = true;
-        anim.SetBool("IsDoubleJumping", true);
     }
 
     void Animaciones()
@@ -99,9 +82,7 @@ public class MovimientoPersonaje : MonoBehaviour
         enSuelo = ground;
         if (ground)
         {
-            haDadoDobleSalto = false;
             anim.SetBool("Jumping", false);
-            anim.SetBool("IsDoubleJumping", false);
         }
     }
 
