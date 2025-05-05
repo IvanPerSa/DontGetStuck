@@ -24907,7 +24907,7 @@ GameObject:
   - component: {fileID: 1184281366}
   - component: {fileID: 1184281367}
   - component: {fileID: 1184281369}
-  - component: {fileID: 1184281368}
+  - component: {fileID: 1184281370}
   m_Layer: 0
   m_Name: TextTriggerVagabundo
   m_TagString: Untagged
@@ -24943,19 +24943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextMask: {fileID: 2340614}
---- !u!114 &1184281368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184281364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625073b7172fbb34c9b306612279620e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextMaskVagabundo: {fileID: 292212890}
 --- !u!61 &1184281369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25002,6 +24989,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.06246, y: 4.238476}
   m_EdgeRadius: 0
+--- !u!114 &1184281370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184281364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccbe4ad26c5e774fbe1f7a178c5f946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextMaskDudeVagabundo: {fileID: 292212890}
 --- !u!1 &1199463279
 GameObject:
   m_ObjectHideFlags: 0
@@ -25144,6 +25144,7 @@ GameObject:
   - component: {fileID: 1224388652}
   - component: {fileID: 1224388654}
   - component: {fileID: 1224388653}
+  - component: {fileID: 1224388655}
   m_Layer: 0
   m_Name: TextTriggerTerrirorial
   m_TagString: Untagged
@@ -25225,6 +25226,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextMask: {fileID: 2340614}
+--- !u!114 &1224388655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224388651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 625073b7172fbb34c9b306612279620e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextMaskTerritorial: {fileID: 2027902240}
 --- !u!1 &1224565901
 GameObject:
   m_ObjectHideFlags: 0
@@ -29498,6 +29512,14 @@ PrefabInstance:
     - target: {fileID: 2731946075629449169, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010346880956433652, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+      propertyPath: near clip plane
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010346880956433652, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+      propertyPath: orthographic size
+      value: 13.8
       objectReference: {fileID: 0}
     - target: {fileID: 8363045670470899051, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
       propertyPath: target

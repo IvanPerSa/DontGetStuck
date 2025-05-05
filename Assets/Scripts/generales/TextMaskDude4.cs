@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class TextMaskDude : MonoBehaviour
+public class TextMaskDude4 : MonoBehaviour
 {
-    public GameObject TextMaskTerritorial; // Referencia al Canvas
+    public GameObject TextMaskDudeVagabundo; // Referencia al Canvas
 
 
     private void Start()
     {
-        if (TextMaskTerritorial != null)
+        if (TextMaskDudeVagabundo != null)
         {
-            TextMaskTerritorial.SetActive(false); // Desactiva el Canvas al inicio
+            TextMaskDudeVagabundo.SetActive(false); // Desactiva el Canvas al inicio
         }
 
     }
@@ -18,7 +18,7 @@ public class TextMaskDude : MonoBehaviour
     {
         if (other.CompareTag("PersonajePrincipal")) // Asegúrate de que el personaje tenga el tag "Princi"
         {
-            TextMaskTerritorial.SetActive(true); // Activa el Canvas
+            TextMaskDudeVagabundo.SetActive(true); // Activa el Canvas
         }
     }
 
@@ -28,7 +28,7 @@ public class TextMaskDude : MonoBehaviour
     {
         if (other.CompareTag("PersonajePrincipal"))
         {
-            TextMaskTerritorial.SetActive(false); // Desactiva el Canvas al salir
+            TextMaskDudeVagabundo.SetActive(false); // Desactiva el Canvas al salir
         }
 
     }
