@@ -381,11 +381,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1664746838425343113, guid: 5d1c66cb5fd17cc4abeb5c503c40b645, type: 3}
   m_PrefabInstance: {fileID: 1149108869}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &94938745 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7008910460240320158, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
-  m_PrefabInstance: {fileID: 711383746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &104895540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,7 +2179,8 @@ PrefabInstance:
       value: 0.36783877
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7099386287956290280, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
@@ -5933,7 +5929,7 @@ GameObject:
   - component: {fileID: 1048842957}
   m_Layer: 0
   m_Name: map
-  m_TagString: Suelos
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14897,7 +14893,7 @@ PrefabInstance:
     - target: {fileID: 3083955008085649666, guid: 321945de3ac67b64fb59edc06db9a1f0, type: 3}
       propertyPath: MenuEnding
       value: 
-      objectReference: {fileID: 94938745}
+      objectReference: {fileID: 0}
     - target: {fileID: 3244973865201938052, guid: 321945de3ac67b64fb59edc06db9a1f0, type: 3}
       propertyPath: m_Name
       value: Ending

@@ -6,7 +6,7 @@ public class Ground_Detector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Suelos") || collision.CompareTag("Interactuable"))
+        if (collision.CompareTag("ground") || collision.CompareTag("Interactuable"))
         {
             movimientoPersonaje.setGround(true);
         }
@@ -14,7 +14,7 @@ public class Ground_Detector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Suelos") || collision.CompareTag("Interactuable"))
+        if (collision.CompareTag("ground") || collision.CompareTag("Interactuable"))
         {
             movimientoPersonaje.setGround(false);
         }

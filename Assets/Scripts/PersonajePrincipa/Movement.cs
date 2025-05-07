@@ -26,6 +26,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(enSuelo);
         if (!alive)
         {
             counter -= Time.deltaTime;
