@@ -9,5 +9,10 @@ public class RestartLevel : MonoBehaviour
         // Obtener el nombre de la escena actual y cargarla nuevamente
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
+
+        Time.timeScale = 1f;
+
     }
+
+
 }

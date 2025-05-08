@@ -1,22 +1,23 @@
 using UnityEngine;
 
-public class PauseGameOnEnding : MonoBehaviour
+public class ActivarMenuEnding : MonoBehaviour
 {
-    // Referencia al Canvas del MenuFinal
-    public GameObject MenuEnding;
+    public GameObject menuEnding; // Arrástralo desde el inspector
 
-    // Método que se llama cuando se detecta la colisión (trigger en 2D)
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Comprobar si el objeto que colisionó tiene el nombre "ending"
-        if (other.gameObject.name == "Princi")
+        if (collision.CompareTag("PersonajePrincipal"))
         {
+            if (menuEnding != null)
+            {
+                menuEnding.SetActive(true);
+                Time.timeScale = 0;
 
-            MenuEnding.SetActive(true);
-         
-            Time.timeScale = 0f;
-
-            
+            }
+            else
+            {
+                Debug.LogWarning("No se ha asignado el objeto MenuEnding.");
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 50}
   m_MaxSize: {x: 32384, y: 8096}
   vertical: 0
-  controlID: 11914
+  controlID: 58206
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -196,7 +196,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28a3ffff4ca3ffffbca3ffff1ca5ffff5ca5ffffd6a5ffff22aaffff8caaffff84aeffff86beffffeef9ffffc4faffffe68c0000e08d0000d2f000003a100100
+      m_ExpandedIDs: c046ffffea56ffff1857ffff1a57ffff1883ffff3883ffff8083ffff8283ffff228cffffc68cffff1c9dfffff2aaffff9cadffff40aeffff14d2ffff26d2ffff74d2ffff7ed2fffffcd2fffffed2ffff76d5ffff14dbffff16dbfffff8ddffff6af8ffff8af8ffffc8f8ffffdaf8ffffdef8ffff34f9ffff50f9ffffbeda0000b4e000009ae1000060290100ec2901001a2a010042a70100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -799,9 +799,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -6.3814077, y: -0.94035745, z: 0.25033796}
+    m_Target: {x: -7.395615, y: 1.3769484, z: -0.07130511}
     speed: 2
-    m_Value: {x: -6.3814077, y: -0.94035745, z: 0.25033796}
+    m_Value: {x: -7.395615, y: 1.3769484, z: -0.07130511}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -851,16 +851,16 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.6816607
+    m_Target: 8.142602
     speed: 2
-    m_Value: 6.6816607
+    m_Value: 8.142602
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.2437998
+    m_SpeedNormalized: 0.6199999
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Otros
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -970,16 +970,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Otros
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: C:\Users\b.perez\ProyectoFinal\DontGetStuck
+  m_LastProjectPath: C:\Users\i.pereiras\Desktop\DontGetStuck
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5c910000
-    m_LastClickedID: 37212
-    m_ExpandedIDs: 00000000f490000000ca9a3bffffff7f
+    m_SelectedIDs: f6b00100
+    m_LastClickedID: 110838
+    m_ExpandedIDs: 00000000ec9100004692000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1008,7 +1008,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f490000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000ec91000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1034,10 +1034,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 18a3ffff
-    m_LastClickedInstanceID: -23784
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 4c8f0000d6a50000dea500008800010004a30000f8a40000fcac000064ad000000000000
+    m_SelectedInstanceIDs: c046ffff
+    m_LastClickedInstanceID: -47424
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 4c8f0000d6a50000dea500008800010004a30000f8a40000fcac000064ad000000000000b4c30000e64b000096b00100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1065,7 +1065,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 236
+  m_DirectoriesAreaWidth: 235
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1085,8 +1085,8 @@ MonoBehaviour:
     y: 0
     width: 347
     height: 933
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -1134,7 +1134,7 @@ MonoBehaviour:
     m_CachedPref: 151
     m_ControlHash: 1412526313
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -23784
+  m_LastInspectedObjectInstanceID: -47424
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
