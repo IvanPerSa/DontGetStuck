@@ -2127,13 +2127,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Princi
       objectReference: {fileID: 0}
+    - target: {fileID: 1072784318219771275, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8242767
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072784318219771275, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0977192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072784318219771275, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0025103092
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072784318219771275, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.048859596
+      objectReference: {fileID: 0}
     - target: {fileID: 2857731675885153446, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -23.4
       objectReference: {fileID: 0}
     - target: {fileID: 2857731675885153446, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 21.8
       objectReference: {fileID: 0}
     - target: {fileID: 2857731675885153446, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2169,19 +2185,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3827604446404315887, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_Size.x
-      value: 0.7992961
+      value: 0.74615085
       objectReference: {fileID: 0}
     - target: {fileID: 3827604446404315887, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_Size.y
-      value: 0.7005738
+      value: 0.683692
       objectReference: {fileID: 0}
     - target: {fileID: 3827604446404315887, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_Offset.x
-      value: 0.032921225
+      value: 0.00634861
       objectReference: {fileID: 0}
     - target: {fileID: 3827604446404315887, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_Offset.y
-      value: -0.04009497
+      value: -0.07118517
       objectReference: {fileID: 0}
     - target: {fileID: 4083553250015559008, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: fuerzaSalto
