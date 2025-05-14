@@ -15,14 +15,21 @@ public class ZigZag : MonoBehaviour
     public float amplitudVerticalZigZag = 1.7f;
     public float frecuenciaVerticalZigZag = 2f;
 
-    private enum Estado { Bajando, EsperaAntesIzquierda, Izquierda, EsperaAntesDerecha, Derecha, EsperaAntesSubida, Subiendo }
+    private enum Estado
+    {
+        Bajando, EsperandoAntesIzquierda,
+        Izquierda, EsperandoAntesDerecha,
+        Derecha, EsperandoAntesSubida,
+        Subiendo, EsperandoAntesBajar
+    }
+
     private Estado estadoActual = Estado.Bajando;
 
     private float tiempo = 0f;
     private float xInicio;
     private float desplazamientoAleatorio;
-
-    private bool esperando = false;
+    private bool enPausa = false;
+    private bool activo = false;
 
     void Start()
     {
@@ -32,7 +39,7 @@ public class ZigZag : MonoBehaviour
 
     void Update()
     {
-        if (esperando) return;
+        if (!activo || enPausa) return;
 
         Vector3 pos = transform.position;
         float delta = velocidad * Time.deltaTime;
@@ -44,10 +51,10 @@ public class ZigZag : MonoBehaviour
                 tiempo += Time.deltaTime;
                 pos.x = xInicio + Mathf.Sin(tiempo * frecuenciaLateral) * amplitudLateral;
 
-                if (Mathf.Approximately(pos.y, alturaMin))
+                if (Mathf.Abs(pos.y - alturaMin) < 0.01f)
                 {
-                    StartCoroutine(CambiarEstadoTrasEspera(Estado.Izquierda));
-                    estadoActual = Estado.EsperaAntesIzquierda;
+                    StartCoroutine(PausarAntesDe(Estado.Izquierda));
+                    estadoActual = Estado.EsperandoAntesIzquierda;
                 }
                 break;
 
@@ -56,10 +63,10 @@ public class ZigZag : MonoBehaviour
                 tiempo += Time.deltaTime;
                 pos.y = alturaMin + Mathf.Sin((tiempo + desplazamientoAleatorio) * frecuenciaVerticalZigZag) * amplitudVerticalZigZag;
 
-                if (Mathf.Approximately(pos.x, destinoIzquierdaX))
+                if (Mathf.Abs(pos.x - destinoIzquierdaX) < 0.01f)
                 {
-                    StartCoroutine(CambiarEstadoTrasEspera(Estado.Derecha));
-                    estadoActual = Estado.EsperaAntesDerecha;
+                    StartCoroutine(PausarAntesDe(Estado.Derecha));
+                    estadoActual = Estado.EsperandoAntesDerecha;
                 }
                 break;
 
@@ -68,10 +75,10 @@ public class ZigZag : MonoBehaviour
                 tiempo += Time.deltaTime;
                 pos.y = alturaMin + Mathf.Sin((tiempo + desplazamientoAleatorio) * frecuenciaVerticalZigZag) * amplitudVerticalZigZag;
 
-                if (Mathf.Approximately(pos.x, xInicio))
+                if (Mathf.Abs(pos.x - xInicio) < 0.01f)
                 {
-                    StartCoroutine(CambiarEstadoTrasEspera(Estado.Subiendo));
-                    estadoActual = Estado.EsperaAntesSubida;
+                    StartCoroutine(PausarAntesDe(Estado.Subiendo));
+                    estadoActual = Estado.EsperandoAntesSubida;
                 }
                 break;
 
@@ -80,9 +87,10 @@ public class ZigZag : MonoBehaviour
                 tiempo += Time.deltaTime;
                 pos.x = xInicio + Mathf.Sin(tiempo * frecuenciaLateral) * amplitudLateral;
 
-                if (Mathf.Approximately(pos.y, alturaMax))
+                if (Mathf.Abs(pos.y - alturaMax) < 0.01f)
                 {
-                    StartCoroutine(CambiarEstadoTrasEspera(Estado.Bajando));
+                    StartCoroutine(PausarAntesDe(Estado.Bajando));
+                    estadoActual = Estado.EsperandoAntesBajar;
                 }
                 break;
         }
@@ -90,13 +98,32 @@ public class ZigZag : MonoBehaviour
         transform.position = pos;
     }
 
-    IEnumerator CambiarEstadoTrasEspera(Estado siguiente)
+    IEnumerator PausarAntesDe(Estado siguienteEstado)
     {
-        esperando = true;
-        yield return new WaitForSeconds(0.4f); // Ajusta aquí el tiempo de espera
-        esperando = false;
-        estadoActual = siguiente;
+        enPausa = true;
+        Vector3 posicionCongelada = transform.position;
+
+        float duracionEspera = 0.5f;
+        float tiempoPasado = 0f;
+
+        while (tiempoPasado < duracionEspera)
+        {
+            transform.position = posicionCongelada;
+            tiempoPasado += Time.deltaTime;
+            yield return null;
+        }
+
         tiempo = 0f;
         desplazamientoAleatorio = Random.Range(0f, 100f);
+        estadoActual = siguienteEstado;
+        enPausa = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!activo && collision.gameObject.CompareTag("PersonajePrincipal"))
+        {
+            activo = true;
+        }
     }
 }
