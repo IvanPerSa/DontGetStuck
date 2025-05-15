@@ -1,12 +1,18 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  // Necesario para cargar escenas
+using UnityEngine.SceneManagement;
 
 public class GotoNextScreen : MonoBehaviour
 {
-    // Método que lleva al jugador a la página principal
     public void GotoNext()
     {
-        // Asegúrate de que el nombre de la escena sea exacto
-        SceneManager.LoadScene("SelectoNiveles");  // Usa el nombre exacto de tu escena con el espacio
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.tutorialCompletado = true;
+        }
+        else
+        {
+            Debug.LogWarning("GameManager no encontrado!");
+        }
+        SceneManager.LoadScene("SelectoNiveles"); // Asegúrate que el nombre es correcto
     }
 }
