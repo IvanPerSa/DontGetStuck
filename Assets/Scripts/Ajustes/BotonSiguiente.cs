@@ -1,18 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GotoNextScreen : MonoBehaviour
+public class TutorialManager : MonoBehaviour
 {
-    public void GotoNext()
+    public void OnTutorialComplete()
     {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.tutorialCompletado = true;
-        }
-        else
-        {
-            Debug.LogWarning("GameManager no encontrado!");
-        }
-        SceneManager.LoadScene("SelectoNiveles"); // Asegúrate que el nombre es correcto
+        // Guardamos que el tutorial ya fue completado
+        PlayerPrefs.SetInt("TutorialCompleted", 1);
+        PlayerPrefs.Save();
+
+        // Cargar la escena principal
+        SceneManager.LoadScene("SelectoNiveles");
     }
 }

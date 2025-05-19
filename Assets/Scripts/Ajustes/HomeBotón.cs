@@ -6,11 +6,14 @@ public class GoToMainMenu : MonoBehaviour
     // Método que lleva al jugador a la página principal
     public void GoToMainPage()
     {
-        // Asegúrate de que el nombre de la escena sea exacto
-        SceneManager.LoadScene("PaginaPrincipal");  // Usa el nombre exacto de tu escena con el espacio
+        // Guarda que el tutorial fue completado (si es relevante aquí)
+        PlayerPrefs.SetInt("TutorialCompleted", 1);
+        PlayerPrefs.Save();
 
+        // Cargar la escena principal
+        SceneManager.LoadScene("PaginaPrincipal");  // Asegúrate de que el nombre sea EXACTAMENTE como en el Build Settings
+
+        // Restablecer el tiempo por si el juego estaba pausado
         Time.timeScale = 1f;
-
-
     }
 }
