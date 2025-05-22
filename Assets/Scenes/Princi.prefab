@@ -206,7 +206,7 @@ MonoBehaviour:
   velocidadCorrer: 10
   fuerzaSalto: 12
   initCounter: 0.65
-  initPos: {x: -9.5, y: 0.9}
+  checkpointMarkerPrefab: {fileID: 3603488859939053627, guid: 17ab986d575634d458fb1c801aea3326, type: 3}
 --- !u!114 &4801581333637189538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ Transform:
   m_GameObject: {fileID: 5720745874099452883}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.012, y: -0.393, z: 0}
+  m_LocalPosition: {x: 0.012, y: -0.48, z: 0}
   m_LocalScale: {x: 1, y: 0.2515137, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

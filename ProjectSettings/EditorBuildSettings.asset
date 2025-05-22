@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectoNiveles.unity
     guid: 139945d264b33cd49952b8a6d5543dc9
+  - enabled: 1
+    path: Assets/Scenes/SelectoNiveles2.unity
+    guid: e201fa5c494bc9048b35a662c2386b1f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

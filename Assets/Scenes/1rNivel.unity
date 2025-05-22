@@ -2145,11 +2145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2857731675885153446, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.93
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 2857731675885153446, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.43
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2857731675885153446, guid: 6bc1802f097805f41973844db4f953f6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3870,6 +3870,18 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 13.695177
       objectReference: {fileID: 0}
+    - target: {fileID: 6823972032573643673, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1724382991}
+    - target: {fileID: 6823972032573643673, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CargarSelectos2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6823972032573643673, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CargarSelecto2, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8363045670470899051, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
       propertyPath: target
       value: 
@@ -3882,10 +3894,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2605763405246818018, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2368735514525378417, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1724382991}
   m_SourcePrefab: {fileID: 100100000, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
 --- !u!1 &732395413
 GameObject:
@@ -13600,6 +13616,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.07, y: 0.08}
   m_EdgeRadius: 0
+--- !u!1 &1724382989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2368735514525378417, guid: b536af3d6df037b4aaa5ce76ddbdff54, type: 3}
+  m_PrefabInstance: {fileID: 711383746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1724382991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724382989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d808b9ce5d3ff745acc67137946b268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735578936
 GameObject:
   m_ObjectHideFlags: 0

@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 8981538030353087754}
   - component: {fileID: 4400527610705560945}
   - component: {fileID: 6823972032573643673}
-  - component: {fileID: 3307521729061202301}
+  - component: {fileID: 2605763405246818018}
   m_Layer: 5
   m_Name: BotonSiguiente
   m_TagString: Untagged
@@ -854,9 +854,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3307521729061202301}
-        m_TargetAssemblyTypeName: GotoNextScreen, Assembly-CSharp
-        m_MethodName: GotoNext
+      - m_Target: {fileID: 2605763405246818018}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: OnTutorialComplete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -866,7 +866,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3307521729061202301
+--- !u!114 &2605763405246818018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1790,11 +1790,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.34
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 14.905713
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
