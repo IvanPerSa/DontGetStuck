@@ -1246,6 +1246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2283790218838975350, guid: 28c7d93db4d6da04f96ffe56bef6acb8, type: 3}
+      propertyPath: m_text
+      value: "\xA1Nivel Completado!"
+      objectReference: {fileID: 0}
     - target: {fileID: 6230442203323036532, guid: 28c7d93db4d6da04f96ffe56bef6acb8, type: 3}
       propertyPath: target
       value: 
