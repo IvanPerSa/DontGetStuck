@@ -13387,6 +13387,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 930080865442325257, guid: 055259db95b467b4ab8545b82e757c1a, type: 3}
+      propertyPath: m_margin.y
+      value: 0.55335236
+      objectReference: {fileID: 0}
     - target: {fileID: 1914650558126853732, guid: 055259db95b467b4ab8545b82e757c1a, type: 3}
       propertyPath: m_Name
       value: CuchillosUi
@@ -14734,6 +14738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1429996300}
     m_Modifications:
+    - target: {fileID: 741033308646677627, guid: 605ae02253cd9fd4c9de7faa00f538f3, type: 3}
+      propertyPath: m_margin.y
+      value: 39.96893
+      objectReference: {fileID: 0}
     - target: {fileID: 1181053820900783311, guid: 605ae02253cd9fd4c9de7faa00f538f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.33
