@@ -15,6 +15,7 @@ TagManager:
   - Pinchos
   - Plataforma
   - MiniCuchi
+  - initPos
   layers:
   - Default
   - TransparentFX

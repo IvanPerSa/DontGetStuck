@@ -113,7 +113,7 @@ public class ZigZag : MonoBehaviour
             yield return null;
         }
 
-        tiempo = 0f;
+        // Ya no reiniciamos el tiempo para evitar tirones
         desplazamientoAleatorio = Random.Range(0f, 100f);
         estadoActual = siguienteEstado;
         enPausa = false;

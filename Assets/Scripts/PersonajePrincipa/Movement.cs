@@ -15,12 +15,10 @@ public class MovimientoPersonaje : MonoBehaviour
 
     public float initCounter;
     private float counter;
-    private Vector2 checkpointPos; // ← Nuevo
+    private Vector2 checkpointPos;
 
-    public GameObject checkpointMarkerPrefab;  // Prefab para la marca visual
+    public GameObject checkpointMarkerPrefab;
     private GameObject currentCheckpointMarker;
-    
-
 
     void Start()
     {
@@ -29,20 +27,17 @@ public class MovimientoPersonaje : MonoBehaviour
         counter = initCounter;
 
         bool modoFacilActivo = PlayerPrefs.GetInt("ModoFacil", 0) == 1;
+        checkpointPos = GameObject.FindGameObjectWithTag("initPos").transform.position;
 
         if (modoFacilActivo)
         {
-            // Activar lógica para modo fácil
             Debug.Log("Modo Fácil activo: checkpoints habilitados");
         }
         else
         {
-            // Desactivar lógica o mantener modo normal
             Debug.Log("Modo Fácil desactivado");
         }
     }
-
-
 
     void Update()
     {
@@ -51,7 +46,6 @@ public class MovimientoPersonaje : MonoBehaviour
             counter -= Time.deltaTime;
             if (counter <= 0)
             {
-                // Respawn en el checkpoint
                 transform.position = checkpointPos;
                 anim.SetBool("alive", true);
                 counter = initCounter;
@@ -68,7 +62,6 @@ public class MovimientoPersonaje : MonoBehaviour
             Saltar();
         }
 
-        // Guardar checkpoint si se presiona C y el modo fácil está activo
         if (Input.GetKeyDown(KeyCode.C) && PlayerPrefs.GetInt("ModoFacil", 0) == 1)
         {
             checkpointPos = transform.position;
@@ -87,12 +80,7 @@ public class MovimientoPersonaje : MonoBehaviour
         Animaciones();
     }
 
-    // Resto de tus métodos (Movimiento, Saltar, Animaciones, etc.)
-
-
-
-
-void Movimiento()
+    void Movimiento()
     {
         float velocidad = Input.GetKey(KeyCode.LeftShift) ? velocidadCorrer : velocidadNormal;
         rb.linearVelocity = new Vector2(moveInput * velocidad, rb.linearVelocity.y);
